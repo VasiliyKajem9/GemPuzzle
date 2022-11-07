@@ -1,0 +1,62 @@
+*,*::before,*::after {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.app{
+  background-color: rgb(14, 88, 88);
+  color: rgb(192, 191, 191);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  .app__heading{
+    max-width: fit-content;
+    margin: 10px auto;
+  }
+
+  .app__sizePicker{
+    margin: 20px auto;
+  }
+}
+
+.gameField{
+  width: 350px;
+  height: 350px;
+  margin: 10px auto;
+  background-color: teal;
+  position: relative;
+  .gameField__pazzleElem{
+    position: absolute;
+    width: 117px;
+    height: 117px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid gray;
+    background-color: rgb(134, 51, 36);
+    &:hover{
+      cursor: pointer;
+      background-color: rgb(252, 54, 19);
+    }
+    &:focus{
+      cursor: pointer;
+      background-color: rgb(252, 54, 19);
+    }
+  }
+}
+
+.sizePicker{
+  width: fit-content;
+  .sizePicker__elem{
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #c0bfbf;
+    border-radius: 3px;
+    &:not(:last-child){
+      margin-right: 10px;
+    }
+    &:hover{
+      background-color: #e6e6e6;
+    }
+  }
+}
