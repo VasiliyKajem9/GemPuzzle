@@ -3,14 +3,16 @@ import '../index.html';
 import appView, { puzzleFramesPosition } from './view/view';
 import changeSize, { generateSize, initialArr, puzzleSize } from './view/sizePicker';
 import createMatrix from './view/matrixCreator';
+import gameControls from './view/gameControls';
 
 const initialGameWidth = 350;
-const initialGameSize = 3;
 
 generateSize()
 
 appView();
 
-puzzleFramesPosition(createMatrix(initialArr, puzzleSize), initialGameWidth, initialGameSize);
+gameControls();
+
+puzzleFramesPosition(createMatrix(initialArr, puzzleSize), initialGameWidth, puzzleSize);
 
 changeSize();

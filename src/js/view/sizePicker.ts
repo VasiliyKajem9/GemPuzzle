@@ -10,6 +10,15 @@ export function generateSize(val = 3) {
   for (let i = 1; i < val * val; i++) {
     initialArr.push(i)
   }
+
+  function shuffle(array: number[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  
+  shuffle(initialArr);
 }
 
 function changeSize() {
@@ -18,14 +27,14 @@ function changeSize() {
 
   sizeButtons.forEach(button => {
     button.addEventListener('click', () => {
-      generateSize(Number(button.dataset.size));
       gameField.innerHTML = '';
       puzzleSize = Number(button.dataset.size);
+      generateSize(puzzleSize);
       puzzleFrames(initialArr, gameField);
 
       createMatrix(initialArr, puzzleSize);
 
-      puzzleFramesPosition(createMatrix(initialArr, puzzleSize), gameField.offsetWidth, Number(button.dataset.size));
+      puzzleFramesPosition(createMatrix(initialArr, puzzleSize), gameField.offsetWidth, puzzleSize);
     })
   })
 }
