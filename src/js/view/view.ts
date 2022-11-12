@@ -72,6 +72,9 @@ export function puzzleFramesPosition(matrix: number[][], gameWidth: number, game
   }
 
   allFrames.forEach(elem => {
+    if (+elem.innerHTML == initialArr.sort((a, b) => a - b)[initialArr.length - 1]) {
+      elem.style.display = 'none';
+    }
     elem.style.width = gameWidth / gameSize + 'px';
     elem.style.height = gameWidth / gameSize + 'px';
   })

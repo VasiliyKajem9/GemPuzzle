@@ -7,7 +7,7 @@ export let puzzleSize = 3;
 export function generateSize(val = 3) {
   initialArr = [];
 
-  for (let i = 1; i < val * val; i++) {
+  for (let i = 1; i < 1 + (val * val); i++) {
     initialArr.push(i)
   }
 
